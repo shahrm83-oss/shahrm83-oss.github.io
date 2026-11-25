@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hybrid solar system · Reeyan Shah</title><meta name="description" content="Sizing and simulating a 100 kWh/day hybrid solar-battery system.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Reeyan Shah</a><nav aria-label="Main"><a href="index.html#projects">Projects</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
+<main><div class="wrap ph"><a class="crumb" href="index.html#projects">← All projects</a>
+<div class="sheet"><h1>Sizing a 100 kWh/day hybrid solar system</h1>
+<p class="lead" style="margin-top:14px">A training design case during my internship at a solar EPC company in Nairobi: specify the hardware, prove it works hour by hour, and turn it into a business case a client can act on.</p>
+<div class="tb"><div class=""><small>Company</small><b>Spenomatic, Nairobi</b></div><div class=""><small>Role</small><b>Engineering intern</b></div><div class=""><small>Date</small><b>June – August 2026</b></div><div class=""><small>Tools</small><b>Excel, PV sizing</b></div><div class=""><small>Sheet</small><b>2 of 6</b></div></div></div>
+<section><div class="facts"><div class="fact"><b>100 kWh/day</b><span>commercial hybrid load</span></div><div class="fact"><b>60% → 8%</b><span>wasted solar energy</span></div><div class="fact"><b>3</b><span>design scenarios costed</span></div><div class="fact"><b>28 days</b><span>of plant data analysed</span></div></div>
+<figure><div class="frame"><svg viewBox="0 0 640 300" role="img" aria-labelledby="sst sd" style="width:100%;height:auto;color:var(--ink)"><title id="sst">Hybrid solar system layout</title><desc id="sd">Solar panels feed hybrid string inverters, which charge a 400 volt lithium iron phosphate battery, supply the site's loads, and connect to the grid.</desc>
+<g fill="none" stroke="currentColor" stroke-width="1.6">
+<rect x="20" y="40" width="150" height="90"/><path d="M20 70h150M20 100h150M70 40v90M120 40v90" stroke-width=".8"/>
+<rect x="245" y="105" width="150" height="80"/>
+<rect x="470" y="40" width="150" height="70"/>
+<rect x="470" y="190" width="150" height="70"/>
+<rect x="245" y="230" width="150" height="56"/>
+<path d="M170 85h40v60h35M395 130h40v-55h35M395 160h40v65h35M320 185v45"/>
+</g>
+<g fill="currentColor"><circle cx="245" cy="145" r="3"/><circle cx="470" cy="75" r="3"/><circle cx="470" cy="225" r="3"/><circle cx="320" cy="230" r="3"/></g>
+<g font-size="13" fill="currentColor">
+<text x="20" y="28">PV array</text><text x="20" y="152" font-size="12" fill="var(--muted)">400 W mono panels</text>
+<text x="257" y="138">Hybrid string</text><text x="257" y="156">inverters</text><text x="257" y="174" font-size="12" fill="var(--muted)">DC to AC</text>
+<text x="482" y="70">Site loads</text><text x="482" y="90" font-size="12" fill="var(--muted)">100 kWh/day</text>
+<text x="482" y="220">Grid</text><text x="482" y="240" font-size="12" fill="var(--muted)">backup and import</text>
+<text x="257" y="254">LiFePO4 battery</text><text x="257" y="273" font-size="12" fill="var(--muted)">400 V DC</text>
+</g></svg></div><figcaption><b>Fig. 1</b>System layout I specified. The hybrid inverters charge the battery from the array and fall back on the grid.</figcaption></figure></section>
+<section><h2>The four design decisions</h2>
+<table class="stack"><thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead><tbody>
+<tr><td>Panel</td><td>400 W monocrystalline</td><td>A sweet spot for commercial installations: low cost and high output per panel.</td></tr>
+<tr><td>System voltage</td><td>400 V DC battery bus</td><td>Higher voltage means lower current, so less power is lost in the cables.</td></tr>
+<tr><td>Battery</td><td>LiFePO4 over lead-acid</td><td>Deeper depth of discharge and over 6,000 cycles. More expensive upfront, but longer life and near-zero maintenance.</td></tr>
+<tr><td>Inverter</td><td>Hybrid string inverters</td><td>The design must charge and discharge a battery, and at 100 kWh/day a central inverter adds complexity for no benefit.</td></tr>
+</tbody></table></section>
+<section><h2>Proving it with an hourly simulation</h2>
+<p>I built a 7-day energy balance in Excel, tracking generation, load and battery state of charge hour by hour. My first design wasted over 60% of the solar energy, because the battery sat full for most of the day and the extra generation had nowhere to go. Re-sizing the battery and array against the hourly profile brought waste down to 8%.</p>
+<div class="bar"><span>First design</span><i class="red" style="width:62%"></i><em>60%+</em></div>
+<div class="bar"><span>Final design</span><i style="width:8%"></i><em>8%</em></div>
+<p class="note" style="margin-top:14px">Share of solar generation wasted over the simulated week.</p></section>
+<section><h2>Turning engineering into a business case</h2>
+<p>A client mostly asks three things: what will it cost, when will I break even, and what will I get back over its life. I costed three scenarios, separating CAPEX from OPEX, and worked out annual savings and the payback period for each, so the client could compare the trade-offs and choose.</p>
+<p class="note">“Good business cases don’t tell the client what to choose, they show them the trade-offs and let them decide.” From my internship report.</p></section>
+<section><h2>Working with real plants</h2>
+<div class="cols"><div><h3>Performance data</h3><p>I analysed 28 days of operating data from a commercial solar plant to calculate its performance ratio, and presented the findings to the managers.</p></div>
+<div><h3>Site inspections</h3><p>I inspected three industrial sites: two pharmaceutical plants that run both solar and steam boilers, and a solar-only factory. On the rooftop system I traced the power path from the panels and MC4 connectors to three inverters fed by 20 strings, then through the combiner and breakers, current transformers, a zero-feed-in controller and the grid transformer. On the boiler side I followed the feedwater pump, furnace, air preheater, dust collector, water softening and pressure-reducing valves.</p></div></div></section>
+<section><div class="next"><a href="index.html#projects">← All projects</a><a href="rc-car.html">Next: RC car →</a></div></section></div></main>
+<footer><div class="wrap"><span>© 2026 Reeyan Shah · Mechanical Engineering, Boston University</span><span><a href="mailto:reeyan.shah456@gmail.com">reeyan.shah456@gmail.com</a> · <a href="https://www.linkedin.com/in/reeyan-shah-758979296">LinkedIn</a> · <a href="https://github.com/shahrm83-oss">GitHub</a></span></div></footer>
+<script>{for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',async()=>{const t=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){b.textContent='Select and copy'}setTimeout(()=>b.textContent='Copy code',1800)})}</script>
+</body></html>

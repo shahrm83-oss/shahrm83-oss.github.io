@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corrosion study · Reeyan Shah</title><meta name="description" content="Team study of salt corrosion in rooftop PV mounting systems.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Reeyan Shah</a><nav aria-label="Main"><a href="index.html#projects">Projects</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
+<main><div class="wrap ph"><a class="crumb" href="index.html#projects">← All projects</a>
+<div class="sheet"><h1>Salt corrosion in rooftop solar mounts</h1>
+<p class="lead" style="margin-top:14px">Why Boston’s coastal air is so hard on the aluminium and steel that hold rooftop solar panels in place, and which materials and treatments hold up best.</p>
+<div class="tb"><div class=""><small>Course</small><b>ENG ME 306, Boston University</b></div><div class=""><small>Team</small><b>4 students</b></div><div class=""><small>Date</small><b>Spring 2026</b></div><div class=""><small>Topics</small><b>Corrosion, processing, materials selection</b></div><div class=""><small>Sheet</small><b>6 of 6</b></div></div></div>
+<section><figure><div class="frame"><svg viewBox="0 0 680 300" role="img" aria-labelledby="cst cd" style="width:100%;height:auto;color:var(--ink)"><title id="cst">Galvanic corrosion at a mounting bolt</title><desc id="cd">An aluminium rail and a steel bolt sit in a film of salty water, which makes the aluminium corrode. A polymer washer between them breaks the circuit.</desc>
+<g fill="none" stroke="currentColor" stroke-width="1.6">
+<rect x="40" y="160" width="600" height="50"/>
+<rect x="300" y="124" width="70" height="22"/><rect x="318" y="156" width="34" height="84"/>
+<path d="M40 152q30-8 60 0t60 0 60 0 60 0M390 152q30-8 60 0t60 0 60 0 60 0" stroke-dasharray="4 4"/>
+<path d="M260 160q8 10 16 0M392 160q8 10 16 0M228 160q6 8 12 0" stroke="var(--red)"/>
+<path d="M370 132l60-39M376 151l54-38M150 150l0-30M250 168l-30 50" stroke-width="1" />
+</g>
+<rect x="296" y="146" width="78" height="10" fill="none" stroke="var(--red)" stroke-width="2"/>
+<g font-size="13" fill="currentColor">
+<text x="436" y="93">Steel fastener: cathode</text>
+<text x="436" y="109" fill="var(--red)">Polymer washer breaks</text><text x="436" y="125" fill="var(--red)">the circuit</text>
+<text x="40" y="112">Salt-water film: electrolyte</text>
+<text x="40" y="240">Aluminium rail: anode, corrodes</text>
+<text x="40" y="262" font-size="12" fill="var(--muted)">Pits start where the oxide film breaks down</text>
+</g></svg></div><figcaption><b>Fig. 1</b>The main failure mechanism: galvanic corrosion where an aluminium rail meets a steel fastener.</figcaption></figure></section>
+<section><h2>The problem</h2>
+<p>Three chloride and moisture sources hit Boston rooftops together:</p>
+<ul><li><b>Marine aerosols:</b> sea spray carries salt that dissolves in humidity and attacks the protective oxide films.</li><li><b>Deicing salts:</b> winter road salt adds a second chloride source, concentrating as water evaporates.</li><li><b>Freeze–thaw:</b> water expands in joints, widening gaps and loosening fasteners.</li></ul>
+<p>Corroded fasteners lose clamping force, so panels can detach in storms. Corroded grounding connections raise resistance and create shock and fire risks. Early failure also cuts system life and wipes out the carbon savings.</p></section>
+<section><h2>The materials science</h2>
+<ul><li>Chloride ions break through the passive Al<sub>2</sub>O<sub>3</sub> film at defects and start pitting.</li><li>Aluminium rail plus steel fastener plus salt water forms a galvanic cell, and the aluminium dissolves at the bolt.</li><li>Pits concentrate stress and start fatigue cracks under cyclic wind loads.</li><li>Processing matters: extrusion elongates the grains and creates paths for intergranular corrosion; a slow quench in T6 heat treatment leaves precipitate-free zones at grain boundaries; sealed anodising builds a dense oxide barrier.</li></ul></section>
+<section><h2>Two solutions compared</h2>
+<table class="stack"><thead><tr><th></th><th>Solution 1</th><th>Solution 2</th></tr></thead><tbody>
+<tr><td>Rails</td><td>Anodised aluminium</td><td>Hot-dip galvanised steel</td></tr>
+<tr><td>Fasteners</td><td>316 stainless steel</td><td>Galvanised steel</td></tr>
+<tr><td>Extra protection</td><td>Polymer isolation washers</td><td>Powder coating</td></tr>
+<tr><td>Strength</td><td>Salt resistance, light roof loading</td><td>Snow load, higher stiffness and tensile strength</td></tr>
+</tbody></table>
+<p style="margin-top:14px">The isolation washers in Solution 1 tackle the galvanic couple directly, by breaking the electrical contact between the aluminium and the steel.</p></section>
+<section><div class="next"><a href="temperature-monitor.html">← Temperature monitor</a><a href="index.html#projects">All projects →</a></div></section></div></main>
+<footer><div class="wrap"><span>© 2026 Reeyan Shah · Mechanical Engineering, Boston University</span><span><a href="mailto:reeyan.shah456@gmail.com">reeyan.shah456@gmail.com</a> · <a href="https://www.linkedin.com/in/reeyan-shah-758979296">LinkedIn</a> · <a href="https://github.com/shahrm83-oss">GitHub</a></span></div></footer>
+<script>{for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',async()=>{const t=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){b.textContent='Select and copy'}setTimeout(()=>b.textContent='Copy code',1800)})}</script>
+</body></html>

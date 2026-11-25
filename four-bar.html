@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Four-bar linkage · Reeyan Shah</title><meta name="description" content="SolidWorks four-bar rally-car linkage with a two-sheet engineering drawing.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Reeyan Shah</a><nav aria-label="Main"><a href="index.html#projects">Projects</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
+<main><div class="wrap ph"><a class="crumb" href="index.html#projects">← All projects</a>
+<div class="sheet"><h1>Four-bar rally-car linkage</h1>
+<p class="lead" style="margin-top:14px">A SolidWorks assembly of a rally car riding over a dune: the wheel is the crank, the car body is the coupler and a shock absorber is the rocker. Then a full two-sheet engineering drawing.</p>
+<div class="tb"><div class=""><small>Course</small><b>ME 357, Boston University</b></div><div class=""><small>Date</small><b>October 2026</b></div><div class=""><small>Tools</small><b>SolidWorks</b></div><div class=""><small>Standard</small><b>ASME Y14.5-2018</b></div><div class=""><small>Sheet</small><b>4 of 6</b></div></div></div>
+<section><div class="facts"><div class="fact"><b>13</b><span>line items in the parts list</span></div><div class="fact"><b>7</b><span>custom parts</span></div><div class="fact"><b>2</b><span>drawing sheets</span></div><div class="fact"><b>±0.005 in</b><span>tightest tolerance</span></div></div>
+<figure><div class="frame"><img src="img/fourbar-render.jpg" alt="Render of a grey car-shaped link on a wheel, joined to a spring link on a dune-shaped base" loading="lazy"></div><figcaption><b>Fig. 1</b>The assembly. The car body (coupler) and shock-absorber link (rocker) move as the wheel (crank) turns.</figcaption></figure></section>
+<section><h2>The assembly</h2>
+<table class="stack"><thead><tr><th>Link</th><th>Part</th><th>Role</th></tr></thead><tbody>
+<tr><td>Ground</td><td>Base link, “desert dune”</td><td>Fixed frame</td></tr>
+<tr><td>Crank</td><td>Rally wheel</td><td>Input, rotates</td></tr>
+<tr><td>Coupler</td><td>Rally car body</td><td>Rides over the dune</td></tr>
+<tr><td>Rocker</td><td>Shock absorber</td><td>Swings to follow the car</td></tr>
+</tbody></table>
+<p style="margin-top:14px">The links are joined with nylon spacers I specified in three lengths, plus aluminium 8-32 binding screws and barrels chosen from McMaster-Carr. I also animated the mechanism in a motion study.</p></section>
+<section><h2>The drawing</h2>
+<figure><div class="frame"><img src="img/fourbar-drawing-1.jpg" alt="Engineering drawing sheet with an exploded view and a 13-row parts list" loading="lazy"></div><figcaption><b>Fig. 2</b>Sheet 1: exploded view with balloons and the parts list, with in-house and McMaster-Carr part numbers.</figcaption></figure>
+<div style="height:24px"></div>
+<figure><div class="frame"><img src="img/fourbar-drawing-2.jpg" alt="Engineering drawing sheet with three orthographic views of the linkage" loading="lazy"></div><figcaption><b>Fig. 3</b>Sheet 2: orthographic views at 1:2 in third-angle projection, showing a 90° crank rotation.</figcaption></figure>
+<p style="margin-top:18px">Dimensions are in inches, with tolerances of ±0.03 (one decimal place), ±0.015 (two) and ±0.005 (three), and ±1° on angles.</p></section>
+<section><div class="next"><a href="rc-car.html">← RC car</a><a href="temperature-monitor.html">Next: temperature monitor →</a></div></section></div></main>
+<footer><div class="wrap"><span>© 2026 Reeyan Shah · Mechanical Engineering, Boston University</span><span><a href="mailto:reeyan.shah456@gmail.com">reeyan.shah456@gmail.com</a> · <a href="https://www.linkedin.com/in/reeyan-shah-758979296">LinkedIn</a> · <a href="https://github.com/shahrm83-oss">GitHub</a></span></div></footer>
+<script>{for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',async()=>{const t=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){b.textContent='Select and copy'}setTimeout(()=>b.textContent='Copy code',1800)})}</script>
+</body></html>

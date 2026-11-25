@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Temperature monitor · Reeyan Shah</title><meta name="description" content="Arduino temperature monitor with a non-blocking alarm.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Reeyan Shah</a><nav aria-label="Main"><a href="index.html#projects">Projects</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
+<main><div class="wrap ph"><a class="crumb" href="index.html#projects">← All projects</a>
+<div class="sheet"><h1>Arduino temperature monitor</h1>
+<p class="lead" style="margin-top:14px">A boxed monitor that shows the temperature in °F and °C, and flashes and sounds an alarm whenever it leaves a safe 80–90 °F band, without ever freezing the display.</p>
+<div class="tb"><div class=""><small>Course</small><b>EK 131, Boston University</b></div><div class=""><small>Date</small><b>April 2026</b></div><div class=""><small>Hardware</small><b>Arduino, analog sensor, 16×2 LCD</b></div><div class=""><small>Code</small><b>Arduino</b></div><div class=""><small>Sheet</small><b>5 of 6</b></div></div></div>
+<section><div class="cols"><figure><div class="frame"><img src="img/arduino-front.jpg" alt="Black enclosure with a blue LCD reading TempF 73.96 and TempC 23.31" loading="lazy"></div><figcaption><b>Fig. 1</b>The finished unit showing 73.96 °F and 23.31 °C.</figcaption></figure><figure><div class="frame"><img src="img/arduino-inside.jpg" alt="Open enclosure showing an Arduino board, wiring and a battery" loading="lazy"></div><figcaption><b>Fig. 2</b>Inside: Arduino board, wiring, LCD with I2C backpack and 9 V battery.</figcaption></figure></div></section>
+<section><h2>How it works</h2>
+<ol class="steps"><li>An analog temperature sensor gives 10 mV per °C with a 0.5 V offset. The code converts the reading to °C and then °F.</li><li>Once a second, the LCD updates both readings.</li><li>If the temperature is below 80 °F or above 90 °F, a red LED and the buzzer pulse every 500 ms, with two alternating tones.</li><li>When it starts up, it plays the Pac-Man intro tune.</li></ol></section>
+<section><h2>Why non-blocking code matters</h2>
+<p>The simple way to blink an alarm is <code>delay()</code>, but that stops the whole program, so the screen would freeze while the alarm sounds. Instead, every task checks <code>millis()</code> and only acts when its own interval has passed. The display, LED and two-tone buzzer each run on their own timer, side by side.</p>
+<div class="codebar"><span>Alarm logic</span><button type="button" data-copy="code1">Copy code</button></div>
+<pre id="code1">if (tempF &lt; 80 || tempF &gt; 90) {
+  // Toggle the whole alarm on/off every 500 ms
+  if (currentMillis - alarmMillis &gt;= 500) {
+    alarmMillis = currentMillis;
+    alarmState = !alarmState;
+    digitalWrite(redLED, alarmState);
+    if (!alarmState) noTone(buzzerPin);
+  }
+  // Alternate two tones every 80 ms while the alarm is on
+  if (alarmState &amp;&amp; currentMillis - wakaMillis &gt;= 80) {
+    wakaMillis = currentMillis;
+    wakaHigh = !wakaHigh;
+    tone(buzzerPin, wakaHigh ? 494 : 330);
+  }
+} else {
+  digitalWrite(redLED, LOW);
+  noTone(buzzerPin);
+  alarmState = false;
+}</pre></section>
+<section><div class="next"><a href="four-bar.html">← Four-bar linkage</a><a href="corrosion.html">Next: corrosion study →</a></div></section></div></main>
+<footer><div class="wrap"><span>© 2026 Reeyan Shah · Mechanical Engineering, Boston University</span><span><a href="mailto:reeyan.shah456@gmail.com">reeyan.shah456@gmail.com</a> · <a href="https://www.linkedin.com/in/reeyan-shah-758979296">LinkedIn</a> · <a href="https://github.com/shahrm83-oss">GitHub</a></span></div></footer>
+<script>{for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',async()=>{const t=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){b.textContent='Select and copy'}setTimeout(()=>b.textContent='Copy code',1800)})}</script>
+</body></html>

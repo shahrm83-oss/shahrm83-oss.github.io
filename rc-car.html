@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RC car · Reeyan Shah</title><meta name="description" content="Designing and building an RC car for Terrier Motorsport onboarding.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Reeyan Shah</a><nav aria-label="Main"><a href="index.html#projects">Projects</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav></div></header>
+<main><div class="wrap ph"><a class="crumb" href="index.html#projects">← All projects</a>
+<div class="sheet"><h1>RC car for Terrier Motorsport onboarding</h1>
+<p class="lead" style="margin-top:14px">Every new mechanical member of BU’s Formula SAE team designs and builds a small battery-powered car from shop stock. Mine had to be light, fast and quick to make.</p>
+<div class="tb"><div class=""><small>Team</small><b>Terrier Motorsport</b></div><div class=""><small>Date</small><b>April 2026</b></div><div class=""><small>Tools</small><b>Fusion 360 CAD and CAM</b></div><div class=""><small>Machines</small><b>CNC mill, lathe, laser cutter, 3D printer</b></div><div class=""><small>Sheet</small><b>3 of 6</b></div></div></div>
+<section><div class="facts"><div class="fact"><b>120 × 120 mm</b><span>chassis limit</span></div><div class="fact"><b>2 weeks</b><span>to manufacture</span></div><div class="fact"><b>4</b><span>processes required</span></div><div class="fact"><b>30 mm</b><span>turned wheels</span></div></div>
+<figure><div class="frame"><img src="img/rc-car.jpg" alt="The finished RC car with a green ribbed cover, white turned wheels and the battery and motor visible" loading="lazy"></div><figcaption><b>Fig. 1</b>The finished car.</figcaption></figure></section>
+<section><h2>The brief</h2>
+<p>Design and build an RC car using stock and tools from BU’s EPIC workshop, inside a 120 × 120 mm chassis. At least one part had to be laser-cut, one milled, one 3D-printed and one turned. The hardest part was fitting all of it into two weeks of manufacturing.</p>
+<div class="cols"><figure><div class="frame"><img src="img/rc-sketch-1.jpg" alt="Hand sketches of the chassis, axle mount, wheels and aero cover" loading="lazy"></div><figcaption><b>Fig. 2</b>Early concept sketches of the chassis, motor mount, wheels and aero cover.</figcaption></figure><figure><div class="frame"><img src="img/rc-sketch-2.jpg" alt="Dimensioned hand sketches of the motor and axle mounts" loading="lazy"></div><figcaption><b>Fig. 3</b>Dimensioned sketches of the axle and motor mounts before CAD.</figcaption></figure></div></section>
+<section><h2>Design</h2>
+<p>The final design has a hanging aero cover, a clamp-fitted motor, an elevated battery mount, sprocket drive and 30 mm wheels. After the critical design review I made three changes:</p>
+<ol class="steps"><li>Raised the aero mount so the battery mount fits underneath.</li><li>Redesigned the motor mount.</li><li>Lowered the motor mount to bring the motor closer to the wheels.</li></ol>
+<div class="cols"><figure><div class="frame"><img src="img/rc-cad.jpg" alt="3D model of the car with its curved aero cover" loading="lazy"></div><figcaption><b>Fig. 4</b>The final Fusion 360 model.</figcaption></figure><figure><div class="frame"><img src="img/rc-cam.jpg" alt="Fusion 360 CAM simulation of a milling tool cutting a stepped block" loading="lazy"></div><figcaption><b>Fig. 5</b>CAM simulation of the motor mount toolpath before cutting it on the CNC mill.</figcaption></figure></div></section>
+<section><h2>Manufacturing</h2>
+<table class="stack"><thead><tr><th>Part</th><th>Process</th></tr></thead><tbody>
+<tr><td>Motor mount</td><td>CNC mill, from my own CAM toolpaths</td></tr><tr><td>Wheels</td><td>Manual lathe</td></tr><tr><td>Battery mount</td><td>3D printed</td></tr></tbody></table></section>
+<section><h2>What I learned</h2>
+<ul><li>How to go from CAD to CAM to a finished part.</li><li>How to plan time across weeks rather than days.</li><li>Which oversights are easy to make, and how to catch them early.</li><li>How to use the manual mill, manual lathe, laser cutter and CNC mill.</li></ul></section>
+<section><div class="next"><a href="solar.html">← Hybrid solar system</a><a href="four-bar.html">Next: four-bar linkage →</a></div></section></div></main>
+<footer><div class="wrap"><span>© 2026 Reeyan Shah · Mechanical Engineering, Boston University</span><span><a href="mailto:reeyan.shah456@gmail.com">reeyan.shah456@gmail.com</a> · <a href="https://www.linkedin.com/in/reeyan-shah-758979296">LinkedIn</a> · <a href="https://github.com/shahrm83-oss">GitHub</a></span></div></footer>
+<script>{for(const b of document.querySelectorAll('[data-copy]'))b.addEventListener('click',async()=>{const t=document.getElementById(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){b.textContent='Select and copy'}setTimeout(()=>b.textContent='Copy code',1800)})}</script>
+</body></html>
